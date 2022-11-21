@@ -20,8 +20,9 @@ pipeline {
         }
         stage('Test')
         {
-            steps{
-                 echo 'testing the application'
+             steps {
+                echo 'testing the application'
+                sh './gradlew check'
             }
         }
         stage('Deploy') {
@@ -38,6 +39,7 @@ pipeline {
     post {
         always {
             echo 'say goodbay'
+            junit 'build/reports/**/*.xml'
         }
     }
 }
