@@ -5,7 +5,7 @@ pipeline {
     }
     options {
         disableConcurrentBuilds()
-        retry(4)
+        retry(2)
     }
     stages {
         stage('Build') {
