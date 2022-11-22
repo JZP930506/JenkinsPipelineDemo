@@ -34,7 +34,6 @@ pipeline {
     post {
         always {
             echo 'say goodbay'
-            junit 'build/reports/**/*.xml'
         }
     }
 }
